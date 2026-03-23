@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DR OUSMANE FALL - Médecin du Travail | Portfolio</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Additional CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <style>
+        :root {
+            --primary-color: #0A1F44;
+            --secondary-color: #2E7D32;
+            --accent-color: #1565C0;
+            --text-dark: #0A1F44;
+            --text-light: #64748B;
+            --bg-light: #F5F7FA;
+            --bg-white: #FFFFFF;
+            --bg-card: #FFFFFF;
+            --border-color: #E2E8F0;
+            --shadow-light: 0 4px 20px rgba(10, 31, 68, 0.08);
+            --shadow-medium: 0 8px 30px rgba(10, 31, 68, 0.12);
+            --shadow-heavy: 0 12px 40px rgba(10, 31, 68, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--bg-light);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        /* Premium Typography */
+        .display-1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .lead {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+        }
+
+        /* Navigation Premium */
+        .navbar {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(30px);
+            box-shadow: var(--shadow-light);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-bottom: 1px solid var(--border-color);
+            padding: 20px 0;
+        }
+
+        .navbar.scrolled {
+            padding: 15px 0;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .navbar-brand {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: translateY(-2px);
+        }
+
+        .profile-pic-nav {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--secondary-color);
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .profile-pic-nav:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(46, 125, 50, 0.3);
+        }
+
+        .navbar-nav {
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-link {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            margin: 0 5px;
+            padding: 12px 20px !important;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            font-size: 0.95rem;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(46, 125, 50, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .nav-link:hover::before {
+            left: 100%;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-color) !important;
+            background: rgba(46, 125, 50, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            color: white !important;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+        }
+
+        /* Hero Section Premium */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #1a2f5a 50%, var(--accent-color) 100%);
+            color: white;
+            padding: 140px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.05" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,112C1248,107,1344,117,1392,122.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat bottom;
+            background-size: cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero .subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-tagline {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 40px;
+            opacity: 0.8;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .hero-buttons {
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+
+        .btn-hero {
+            padding: 15px 35px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary-hero {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: white;
+            box-shadow: 0 8px 25px rgba(46, 125, 50, 0.3);
+        }
+
+        .btn-primary-hero:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(46, 125, 50, 0.4);
+        }
+
+        .btn-outline-hero {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline-hero:hover {
+            background: white;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Premium Cards */
+        .premium-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+        }
+
+        .premium-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        /* Timeline Premium */
+        .timeline {
+            position: relative;
+            padding: 60px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--secondary-color), var(--accent-color));
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .timeline-content {
+            background: var(--bg-card);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--border-color);
+            width: 45%;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 35px;
+            width: 24px;
+            height: 24px;
+            background: var(--secondary-color);
+            border: 4px solid white;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 0 6px rgba(46, 125, 50, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover + .timeline-dot {
+            transform: translateX(-50%) scale(1.2);
+            box-shadow: 0 0 0 8px rgba(46, 125, 50, 0.3);
+        }
+
+        .timeline-date {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .timeline-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .timeline-company {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .timeline-company.highlight {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        /* Skills Badges */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .skill-category {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .skill-category-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-category-title i {
+            color: var(--secondary-color);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, var(--bg-light), var(--border-color));
+            color: var(--text-dark);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+        }
+
+        /* Education Cards */
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .education-card {
+            background: var(--bg-card);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .education-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--secondary-color), var(--accent-color));
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .education-degree {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .education-institution {
+            color: var(--text-light);
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 15px;
+        }
+
+        .education-year {
+            color: var(--secondary-color);
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Languages */
+        .languages-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .language-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-light);
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .language-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .language-flag {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .language-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .language-level {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .language-progress {
+            margin-top: 15px;
+            height: 8px;
+            background: var(--bg-light);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .language-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            border-radius: 10px;
+            transition: width 2s ease;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 80px 0;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 50px;
+            border-radius: 25px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            margin: 20px 0;
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .contact-item i {
+            margin-right: 15px;
+            width: 25px;
+        }
+
+        .btn-contact {
+            background: white;
+            color: var(--primary-color);
+            padding: 18px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-contact:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Ripple effect for nav links */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: scale(0);
+            animation: ripple-animation 0.6s ease-out;
+            pointer-events: none;
+        }
+
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Profile Icons */
+        .profile-icons {
+            padding: 20px;
+        }
+
+        .icon-item {
+            transition: transform 0.3s ease;
+        }
+
+        .icon-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(46, 125, 50, 0.2);
+        }
+
+        .icon-circle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(46, 125, 50, 0.3);
+        }
+
+        .icon-circle i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .icon-item h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-content {
+                width: calc(100% - 60px);
+                margin-left: 60px !important;
+            }
+            
+            .timeline-dot {
+                left: 30px;
+            }
+            
+            .navbar-brand {
+                font-size: 1.4rem !important;
+            }
+            
+            .profile-pic-nav {
+                width: 40px !important;
+                height: 40px !important;
+            }
+            
+            .nav-link {
+                font-size: 0.9rem;
+                padding: 10px 15px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="assets/images/profile.jpg" alt="DR OUSMANE FALL" class="profile-pic-nav">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home"><i class="fas fa-home me-2"></i>Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#profile"><i class="fas fa-user me-2"></i>Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience"><i class="fas fa-briefcase me-2"></i>Expérience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education"><i class="fas fa-graduation-cap me-2"></i>Formation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills"><i class="fas fa-chart-bar me-2"></i>Compétences</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#languages"><i class="fas fa-language me-2"></i>Langues</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact"><i class="fas fa-envelope me-2"></i>Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1>DR OUSMANE FALL</h1>
+                        <p class="subtitle">Médecin du Travail | Expert en Gouvernance, RSE & Droits Humains</p>
+                        <p class="hero-tagline">"Leader engagé dans la transformation des institutions de santé et la performance sociale durable"</p>
+                        
+                        <div class="hero-buttons">
+                            <a href="#" class="btn-hero btn-primary-hero" onclick="downloadCV(); return false;">
+                                <i class="fas fa-download me-2"></i>Télécharger CV
+                            </a>
+                            <a href="#contact" class="btn-hero btn-outline-hero">
+                                <i class="fas fa-envelope me-2"></i>Me contacter
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-profile text-center">
+                        <img src="assets/images/profile.jpg" alt="DR OUSMANE FALL" class="img-fluid rounded-circle" style="max-width: 350px; border: 8px solid rgba(255,255,255,0.1); box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile" class="profile-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Profil Professionnel</h2>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="premium-card fade-in">
+                        <div class="row align-items-center">
+                            <div class="col-lg-8">
+                                <p class="lead">
+                                    Médecin du travail et manager des structures de santé, doté d'une solide expertise en gouvernance, responsabilité sociétale des entreprises (RSE) et droits humains.
+                                </p>
+                                <p>
+                                    Je mets au service des institutions une approche stratégique orientée vers la performance, la transparence et l'impact social. Fort d'une expérience confirmée dans la gestion des services de santé et la prévention des risques professionnels, je place le capital humain au cœur de la performance organisationnelle.
+                                </p>
+                                <p>
+                                    Je porte une vision axée sur la transformation responsable, l'optimisation des services aux usagers et le renforcement de la confiance institutionnelle.
+                                </p>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="profile-icons text-center">
+                                    <div class="icon-item mb-4">
+                                        <div class="icon-circle">
+                                            <i class="fas fa-balance-scale"></i>
+                                        </div>
+                                        <h5>Gouvernance</h5>
+                                    </div>
+                                    <div class="icon-item mb-4">
+                                        <div class="icon-circle">
+                                            <i class="fas fa-heartbeat"></i>
+                                        </div>
+                                        <h5>Santé</h5>
+                                    </div>
+                                    <div class="icon-item">
+                                        <div class="icon-circle">
+                                            <i class="fas fa-hands-helping"></i>
+                                        </div>
+                                        <h5>Impact Social</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="skills-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Expériences Professionnelles</h2>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Depuis 2023</div>
+                        <div class="timeline-title">Chef de Service Médecine du Travail</div>
+                        <div class="timeline-company highlight">IPRES</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021 – 2023</div>
+                        <div class="timeline-title">Chef de Service Médecine du Travail</div>
+                        <div class="timeline-company">Groupe CCBM</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021 – 2023</div>
+                        <div class="timeline-title">Chef de Service Médecine du Travail</div>
+                        <div class="timeline-company">Master Office</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021</div>
+                        <div class="timeline-title">Médecin du Travail Prestataire</div>
+                        <div class="timeline-company">CICS</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020 – 2021</div>
+                        <div class="timeline-title">Médecin Chef</div>
+                        <div class="timeline-company">IPRES Richard Toll</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2018 – 2020</div>
+                        <div class="timeline-title">Médecin Chef</div>
+                        <div class="timeline-company">IPRES Tambacounda</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2017 – 2018</div>
+                        <div class="timeline-title">Médecin Chef Adjoint</div>
+                        <div class="timeline-company">Clinique des Almadies</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">—</div>
+                        <div class="timeline-title">Médecin</div>
+                        <div class="timeline-company">Service Médical des Étudiants (UCAD)</div>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="profile-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Formations & Certifications</h2>
+            <div class="education-grid">
+                <div class="education-card fade-in">
+                    <div class="education-degree">Master 2 en Management de la Santé</div>
+                    <div class="education-institution">Institution de formation supérieure</div>
+                    <div class="education-year">Formation spécialisée</div>
+                </div>
+                
+                <div class="education-card fade-in">
+                    <div class="education-degree">Master 1 en Responsabilité Sociétale des Entreprises (RSE)</div>
+                    <div class="education-institution">École spécialisée en management durable</div>
+                    <div class="education-year">Certification RSE</div>
+                </div>
+                
+                <div class="education-card fade-in">
+                    <div class="education-degree">Diplôme d'Études Spécialisées en Santé et Sécurité au Travail</div>
+                    <div class="education-institution">Faculté de Médecine</div>
+                    <div class="education-year">Spécialisation SST</div>
+                </div>
+                
+                <div class="education-card fade-in">
+                    <div class="education-degree">Doctorat en Médecine</div>
+                    <div class="education-institution">Université Cheikh Anta Diop</div>
+                    <div class="education-year">Formation médicale</div>
+                </div>
+                
+                <div class="education-card fade-in">
+                    <div class="education-degree">Certification en Droits Humains</div>
+                    <div class="education-institution">Organisation internationale</div>
+                    <div class="education-year">Formation spécialisée</div>
+                </div>
+                
+                <div class="education-card fade-in">
+                    <div class="education-degree">Certification en Santé et Sécurité au Travail (SST)</div>
+                    <div class="education-institution">Organisme de certification</div>
+                    <div class="education-year">Certification professionnelle</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Compétences Clés</h2>
+            <div class="skills-container">
+                <div class="skill-category fade-in">
+                    <div class="skill-category-title">
+                        <i class="fas fa-balance-scale"></i>
+                        Gouvernance & Management
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Gouvernance stratégique</span>
+                        <span class="skill-tag">Management d'équipe</span>
+                        <span class="skill-tag">Conduite du changement</span>
+                        <span class="skill-tag">Prise de décision</span>
+                        <span class="skill-tag">Leadership transformationnel</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category fade-in">
+                    <div class="skill-category-title">
+                        <i class="fas fa-heartbeat"></i>
+                        Santé & Sécurité
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Santé au travail</span>
+                        <span class="skill-tag">Sécurité industrielle</span>
+                        <span class="skill-tag">Gestion des risques</span>
+                        <span class="skill-tag">Prévention</span>
+                        <span class="skill-tag">Médecine du travail</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category fade-in">
+                    <div class="skill-category-title">
+                        <i class="fas fa-leaf"></i>
+                        RSE & Développement Durable
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Responsabilité sociétale</span>
+                        <span class="skill-tag">Développement durable</span>
+                        <span class="skill-tag">Impact social</span>
+                        <span class="skill-tag">Éthique professionnelle</span>
+                        <span class="skill-tag">Reporting RSE</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category fade-in">
+                    <div class="skill-category-title">
+                        <i class="fas fa-hospital"></i>
+                        Management Santé
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Pilotage de structures</span>
+                        <span class="skill-tag">Optimisation des services</span>
+                        <span class="skill-tag">Management hospitalier</span>
+                        <span class="skill-tag">Politiques de santé</span>
+                        <span class="skill-tag">Performance sociale</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category fade-in">
+                    <div class="skill-category-title">
+                        <i class="fas fa-users"></i>
+                        Droits Humains
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Droits fondamentaux</span>
+                        <span class="skill-tag">Diplomatie sociale</span>
+                        <span class="skill-tag">Dialogue social</span>
+                        <span class="skill-tag">Relations humaines</span>
+                        <span class="skill-tag">Inclusion sociale</span>
+                    </div>
+                </div>
+                
+                <div class="skill-category fade-in">
+                    <div class="skill-category-title">
+                        <i class="fas fa-chart-line"></i>
+                        Stratégie & Innovation
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Vision stratégique</span>
+                        <span class="skill-tag">Transformation digitale</span>
+                        <span class="skill-tag">Innovation organisationnelle</span>
+                        <span class="skill-tag">Analyse stratégique</span>
+                        <span class="skill-tag">Planification stratégique</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="languages" class="profile-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Langues</h2>
+            <div class="languages-container">
+                <div class="language-card fade-in">
+                    <div class="language-flag">🇫🇷</div>
+                    <div class="language-name">Français</div>
+                    <div class="language-level">Courant</div>
+                    <div class="language-progress">
+                        <div class="language-progress-bar" data-width="100%"></div>
+                    </div>
+                </div>
+                
+                <div class="language-card fade-in">
+                    <div class="language-flag">🇸🇳</div>
+                    <div class="language-name">Wolof</div>
+                    <div class="language-level">Courant</div>
+                    <div class="language-progress">
+                        <div class="language-progress-bar" data-width="100%"></div>
+                    </div>
+                </div>
+                
+                <div class="language-card fade-in">
+                    <div class="language-flag">🇬🇧</div>
+                    <div class="language-name">Anglais</div>
+                    <div class="language-level">Intermédiaire</div>
+                    <div class="language-progress">
+                        <div class="language-progress-bar" data-width="60%"></div>
+                    </div>
+                </div>
+                
+                <div class="language-card fade-in">
+                    <div class="language-flag">🇨🇳</div>
+                    <div class="language-name">Chinois</div>
+                    <div class="language-level">Intermédiaire</div>
+                    <div class="language-progress">
+                        <div class="language-progress-bar" data-width="50%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title fade-in" style="color: white;">Contact Stratégique</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-card fade-in">
+                        <h3 class="contact-title">Contacter pour une opportunité stratégique</h3>
+                        
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Liberté 6 Extension, Dakar, Sénégal
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                77 263 27 91 / 76 272 84 73
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                ousmanefall38.of@gmail.com
+                            </div>
+                        </div>
+                        
+                        <div class="contact-vision">
+                            <blockquote class="blockquote text-white">
+                                <p class="mb-0">"Placer l'humain au cœur de la performance institutionnelle"</p>
+                                <footer class="blockquote-footer mt-2 text-white-50">Vision stratégique</footer>
+                            </blockquote>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <a href="tel:+772632791" class="btn-contact">
+                                <i class="fas fa-phone me-2"></i>Appeler maintenant
+                            </a>
+                            <a href="mailto:ousmanefall38.of@gmail.com" class="btn-contact ms-3" style="background: transparent; border: 2px solid white; color: white;">
+                                <i class="fas fa-envelope me-2"></i>Envoyer un email
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 DR OUSMANE FALL. Tous droits réservés.</p>
+            <p class="mt-2">Médecin du Travail | Expert en Gouvernance, RSE & Droits Humains</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // Enhanced animations and interactions
+            function downloadCV() {
+                // Simulate CV download
+                alert('Fonction de téléchargement du CV - À implémenter avec un fichier PDF réel');
+            }
+
+            // Enhanced scroll animations
+            function animateOnScroll() {
+                $('.fade-in').each(function(index) {
+                    var elementTop = $(this).offset().top;
+                    var elementBottom = elementTop + $(this).outerHeight();
+                    var viewportTop = $(window).scrollTop();
+                    var viewportBottom = viewportTop + $(window).height();
+
+                    if (elementBottom > viewportTop && elementTop < viewportBottom) {
+                        setTimeout(() => {
+                            $(this).addClass('visible');
+                        }, index * 100);
+                    }
+                });
+
+                // Animate skill tags
+                $('.skill-tag').each(function(index) {
+                    var elementTop = $(this).offset().top;
+                    var elementBottom = elementTop + $(this).outerHeight();
+                    var viewportTop = $(window).scrollTop();
+                    var viewportBottom = viewportTop + $(window).height();
+
+                    if (elementBottom > viewportTop && elementTop < viewportBottom) {
+                        setTimeout(() => {
+                            $(this).css('opacity', '1').css('transform', 'translateY(0)');
+                        }, index * 50);
+                    }
+                });
+
+                // Animate language progress bars
+                $('.language-progress-bar').each(function() {
+                    var elementTop = $(this).offset().top;
+                    var elementBottom = elementTop + $(this).outerHeight();
+                    var viewportTop = $(window).scrollTop();
+                    var viewportBottom = viewportTop + $(window).height();
+
+                    if (elementBottom > viewportTop && elementTop < viewportBottom) {
+                        var width = $(this).data('width');
+                        $(this).css('width', width);
+                    }
+                });
+            }
+
+            // Initialize skill tags animation
+            $('.skill-tag').css({
+                'opacity': '0',
+                'transform': 'translateY(20px)',
+                'transition': 'all 0.5s ease'
+            });
+
+            // Enhanced timeline animations
+            $('.timeline-item').each(function(index) {
+                var $item = $(this);
+                var $content = $item.find('.timeline-content');
+                var $dot = $item.find('.timeline-dot');
+                
+                $content.css('opacity', '0').css('transform', 'scale(0.8)');
+                $dot.css('opacity', '0').css('transform', 'translateX(-50%) scale(0)');
+                
+                setTimeout(() => {
+                    $content.css('transition', 'all 0.6s ease').css('opacity', '1').css('transform', 'scale(1)');
+                    $dot.css('transition', 'all 0.6s ease').css('opacity', '1').css('transform', 'translateX(-50%) scale(1)');
+                }, index * 200);
+            });
+
+            // Enhanced card hover effects
+            $('.premium-card, .education-card, .skill-category, .language-card').hover(
+                function() {
+                    $(this).css('transform', 'translateY(-10px) scale(1.02)');
+                },
+                function() {
+                    $(this).css('transform', 'translateY(0) scale(1)');
+                }
+            );
+
+            // Parallax effect for hero section
+            $(window).scroll(function() {
+                var scrolled = $(this).scrollTop();
+                $('.hero').css('background-position', 'center ' + (scrolled * 0.3) + 'px');
+                
+                // Parallax for hero profile image
+                $('.hero-profile img').css('transform', 'translateY(' + (scrolled * 0.2) + 'px)');
+            });
+
+            // Enhanced button animations
+            $('.btn-hero, .btn-contact').hover(
+                function() {
+                    $(this).css('transform', 'translateY(-5px) scale(1.05)');
+                },
+                function() {
+                    $(this).css('transform', 'translateY(0) scale(1)');
+                }
+            );
+
+            // Icon animations
+            $('.icon-circle').hover(
+                function() {
+                    $(this).css('transform', 'scale(1.2) rotate(10deg)');
+                },
+                function() {
+                    $(this).css('transform', 'scale(1) rotate(0deg)');
+                }
+            );
+
+            // Enhanced mobile menu
+            $('.navbar-toggler').on('click', function() {
+                $(this).toggleClass('active');
+                if ($(this).hasClass('active')) {
+                    $(this).find('.navbar-toggler-icon').css('transform', 'rotate(90deg) scale(1.1)');
+                } else {
+                    $(this).find('.navbar-toggler-icon').css('transform', 'rotate(0deg) scale(1)');
+                }
+            });
+
+            // Smooth scroll for all anchor links
+            $('a[href^="#"]').on('click', function(e) {
+                e.preventDefault();
+                var target = $(this.getAttribute('href'));
+                if (target.length) {
+                    // Close mobile menu if open
+                    $('.navbar-collapse').collapse('hide');
+                    
+                    // Smooth scroll to target
+                    $('html, body').animate({
+                        scrollTop: target.offset().top - 90
+                    }, 1200, 'easeInOutCubic');
+                    
+                    // Update active state
+                    $('.nav-link').removeClass('active');
+                    $(this).addClass('active');
+                }
+            });
+
+            // Enhanced scroll spy with better accuracy
+            function updateActiveNav() {
+                var scrollPosition = $(document).scrollTop() + 100;
+                
+                $('section[id]').each(function() {
+                    var target = $(this);
+                    var id = target.attr('id');
+                    
+                    if (target.length) {
+                        var top = target.offset().top;
+                        var bottom = top + target.outerHeight();
+                        
+                        if (scrollPosition >= top && scrollPosition <= bottom) {
+                            $('.nav-link').removeClass('active');
+                            $('.nav-link[href="#' + id + '"]').addClass('active');
+                            return false; // Break the loop
+                        }
+                    }
+                });
+            }
+
+            // Enhanced scroll spy
+            $(window).scroll(function() {
+                var scrollPosition = $(document).scrollTop();
+                
+                // Update active navigation
+                updateActiveNav();
+                
+                // Navbar background on scroll with enhanced effects
+                if ($(this).scrollTop() > 50) {
+                    $('.navbar').addClass('scrolled');
+                    $('.profile-pic-nav').css('width', '40px').css('height', '40px');
+                } else {
+                    $('.navbar').removeClass('scrolled');
+                    $('.profile-pic-nav').css('width', '45px').css('height', '45px');
+                }
+                
+                // Trigger scroll animations
+                animateOnScroll();
+            });
+
+            // Initial animations and setup
+            animateOnScroll();
+            updateActiveNav(); // Set initial active state
+
+            // Add ripple effect to nav links
+            $('.nav-link').on('click', function(e) {
+                let ripple = $('<span class="ripple"></span>');
+                $(this).append(ripple);
+                
+                let x = e.pageX - $(this).offset().left;
+                let y = e.pageY - $(this).offset().top;
+                
+                ripple.css({
+                    left: x + 'px',
+                    top: y + 'px'
+                });
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+
+            // Enhanced timeline hover effects
+            $('.timeline-content').hover(
+                function() {
+                    $(this).next('.timeline-dot').css('transform', 'translateX(-50%) scale(1.3)');
+                    $(this).css('box-shadow', 'var(--shadow-heavy)');
+                },
+                function() {
+                    $(this).next('.timeline-dot').css('transform', 'translateX(-50%) scale(1)');
+                    $(this).css('box-shadow', 'var(--shadow-light)');
+                }
+            );
+        });
+    </script>
+</body>
+</html>

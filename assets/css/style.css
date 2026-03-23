@@ -1,0 +1,84 @@
+/* Additional Styles for Enhanced Navigation */
+
+/* Profile picture enhancements */
+.profile-pic-nav {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Enhanced mobile navigation */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.4rem !important;
+    }
+    
+    .profile-pic-nav {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .nav-link {
+        font-size: 0.9rem;
+        padding: 10px 15px !important;
+    }
+    
+    .nav-link i {
+        margin-right: 8px !important;
+    }
+}
+
+/* Loading animation for profile picture */
+.profile-pic-nav {
+    animation: profileLoad 1s ease-out;
+}
+
+@keyframes profileLoad {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) rotate(-10deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(5deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* Enhanced hover states */
+.nav-link {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 80%;
+}
+
+/* Active state indicator */
+.nav-link.active::after {
+    width: 80%;
+    background: white;
+}
+
+/* Smooth transitions for all interactive elements */
+.nav-link, .navbar-brand, .profile-pic-nav, .navbar-toggler {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
